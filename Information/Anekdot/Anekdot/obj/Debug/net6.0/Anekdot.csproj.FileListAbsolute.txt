@@ -1,0 +1,15 @@
+E:\Колледж\Универ\Information\Anekdot\Anekdot\obj\Debug\net6.0\Anekdot.csproj.AssemblyReference.cache
+E:\Колледж\Универ\Information\Anekdot\Anekdot\obj\Debug\net6.0\Anekdot.GeneratedMSBuildEditorConfig.editorconfig
+E:\Колледж\Универ\Information\Anekdot\Anekdot\obj\Debug\net6.0\Anekdot.AssemblyInfoInputs.cache
+E:\Колледж\Универ\Information\Anekdot\Anekdot\obj\Debug\net6.0\Anekdot.AssemblyInfo.cs
+E:\Колледж\Универ\Information\Anekdot\Anekdot\obj\Debug\net6.0\Anekdot.csproj.CoreCompileInputs.cache
+E:\Колледж\Универ\Information\Anekdot\Anekdot\bin\Debug\net6.0\Anekdot.exe
+E:\Колледж\Универ\Information\Anekdot\Anekdot\bin\Debug\net6.0\Anekdot.deps.json
+E:\Колледж\Универ\Information\Anekdot\Anekdot\bin\Debug\net6.0\Anekdot.runtimeconfig.json
+E:\Колледж\Универ\Information\Anekdot\Anekdot\bin\Debug\net6.0\Anekdot.dll
+E:\Колледж\Универ\Information\Anekdot\Anekdot\bin\Debug\net6.0\Anekdot.pdb
+E:\Колледж\Универ\Information\Anekdot\Anekdot\obj\Debug\net6.0\Anekdot.dll
+E:\Колледж\Универ\Information\Anekdot\Anekdot\obj\Debug\net6.0\refint\Anekdot.dll
+E:\Колледж\Универ\Information\Anekdot\Anekdot\obj\Debug\net6.0\Anekdot.pdb
+E:\Колледж\Универ\Information\Anekdot\Anekdot\obj\Debug\net6.0\Anekdot.genruntimeconfig.cache
+E:\Колледж\Универ\Information\Anekdot\Anekdot\obj\Debug\net6.0\ref\Anekdot.dll
