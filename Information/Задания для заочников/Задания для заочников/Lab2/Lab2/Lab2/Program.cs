@@ -8,7 +8,7 @@ class Program
         Console.WriteLine("Выберите способ решения задания, введите '1' или '2':");
 
 
-        double solveVariant = getIntVarFromInput();
+        int solveVariant = getIntVarFromInput();
 
         switch (solveVariant)
         {
@@ -22,8 +22,6 @@ class Program
                 Console.WriteLine("Такого варианта не существует");
                 break;
         }
-
-        //Console.WriteLine("Task result: " + solveTask(a, b, c));
     }
 
     private static void solveTask1()
@@ -77,7 +75,7 @@ class Program
         return a;
     }
 
-    private static double getIntVarFromInput()
+    private static int getIntVarFromInput()
     {
         int a;
         if (!Int32.TryParse(Console.ReadLine(), out a))
