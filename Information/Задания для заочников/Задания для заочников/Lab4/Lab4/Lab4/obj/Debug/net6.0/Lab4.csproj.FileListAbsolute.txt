@@ -1,0 +1,15 @@
+F:\Колледж\Универ\programming\Information\Задания для заочников\Задания для заочников\Lab4\Lab4\Lab4\bin\Debug\net6.0\Lab4.exe
+F:\Колледж\Универ\programming\Information\Задания для заочников\Задания для заочников\Lab4\Lab4\Lab4\bin\Debug\net6.0\Lab4.deps.json
+F:\Колледж\Универ\programming\Information\Задания для заочников\Задания для заочников\Lab4\Lab4\Lab4\bin\Debug\net6.0\Lab4.runtimeconfig.json
+F:\Колледж\Универ\programming\Information\Задания для заочников\Задания для заочников\Lab4\Lab4\Lab4\bin\Debug\net6.0\Lab4.dll
+F:\Колледж\Универ\programming\Information\Задания для заочников\Задания для заочников\Lab4\Lab4\Lab4\bin\Debug\net6.0\Lab4.pdb
+F:\Колледж\Универ\programming\Information\Задания для заочников\Задания для заочников\Lab4\Lab4\Lab4\obj\Debug\net6.0\Lab4.csproj.AssemblyReference.cache
+F:\Колледж\Универ\programming\Information\Задания для заочников\Задания для заочников\Lab4\Lab4\Lab4\obj\Debug\net6.0\Lab4.GeneratedMSBuildEditorConfig.editorconfig
+F:\Колледж\Универ\programming\Information\Задания для заочников\Задания для заочников\Lab4\Lab4\Lab4\obj\Debug\net6.0\Lab4.AssemblyInfoInputs.cache
+F:\Колледж\Универ\programming\Information\Задания для заочников\Задания для заочников\Lab4\Lab4\Lab4\obj\Debug\net6.0\Lab4.AssemblyInfo.cs
+F:\Колледж\Универ\programming\Information\Задания для заочников\Задания для заочников\Lab4\Lab4\Lab4\obj\Debug\net6.0\Lab4.csproj.CoreCompileInputs.cache
+F:\Колледж\Универ\programming\Information\Задания для заочников\Задания для заочников\Lab4\Lab4\Lab4\obj\Debug\net6.0\Lab4.dll
+F:\Колледж\Универ\programming\Information\Задания для заочников\Задания для заочников\Lab4\Lab4\Lab4\obj\Debug\net6.0\refint\Lab4.dll
+F:\Колледж\Универ\programming\Information\Задания для заочников\Задания для заочников\Lab4\Lab4\Lab4\obj\Debug\net6.0\Lab4.pdb
+F:\Колледж\Универ\programming\Information\Задания для заочников\Задания для заочников\Lab4\Lab4\Lab4\obj\Debug\net6.0\Lab4.genruntimeconfig.cache
+F:\Колледж\Универ\programming\Information\Задания для заочников\Задания для заочников\Lab4\Lab4\Lab4\obj\Debug\net6.0\ref\Lab4.dll
