@@ -159,21 +159,21 @@ namespace Lab2
         }
 
         private int endWordIndex = 0;
-        // поиск слов оканчивающихся на соглассные с поочерёдным выделением
+        // поиск слов оканчивающихся на глассные с поочерёдным выделением
         private void selectVowelLettersBtn_Click(object sender, EventArgs e)
         {
             richTextBox.ReadOnly = true;
             string text = richTextBox.Text;
 
-            string startRegex = @"[a-zа-яё]+";
-            string russianLetters = "[бвгджзклмнпрстфхцчшщъьй]";
-            string englishLetters = "[bcdfghjklmnpqrstvwxz]";
-            string endRegex = "([^\\w]|$)";
-            string fullRegexString = @startRegex + "(" + russianLetters + "|" + englishLetters + ")" + endRegex;
+            string endRegex = @"[a-zа-яё]+";
+            string russianLetters = "[аеёиоуыэюя]";
+            string englishLetters = "[aeiou]";
+            string startRegex = "(^|[^\\w])";
+            string fullRegexString = startRegex + "(" + russianLetters + "|" + englishLetters + ")" + endRegex;
             Regex regex = new Regex(fullRegexString, RegexOptions.IgnoreCase);
             MatchCollection allMatches = regex.Matches(text);
 
-            textBoxLog.Text += "Всего слов найдено: " + allMatches.Count + Environment.NewLine + Environment.NewLine;
+            textBoxLog.Text += Environment.NewLine + "Всего слов найдено: " + allMatches.Count + Environment.NewLine + Environment.NewLine;
 
             text = text.Substring(endWordIndex);
             regex = new Regex(fullRegexString, RegexOptions.IgnoreCase);
