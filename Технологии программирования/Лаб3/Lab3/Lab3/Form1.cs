@@ -18,12 +18,14 @@ namespace Lab3
             chartSelect.Series[1].Color = Color.Blue;
             chartSelect.Series[0].LegendText = "Сравнения";
             chartSelect.Series[1].LegendText = "Обмены";
+
             chartInsert.Series[0].BorderWidth = 3;
             chartInsert.Series[0].Color = Color.Red;
             chartInsert.Series[1].BorderWidth = 3;
             chartInsert.Series[1].Color = Color.Blue;
             chartInsert.Series[0].LegendText = "Сравнения";
             chartInsert.Series[1].LegendText = "Обмены";
+
             chartBubble.Series[0].BorderWidth = 3;
             chartBubble.Series[0].Color = Color.Red;
             chartBubble.Series[1].BorderWidth = 3;
@@ -31,6 +33,12 @@ namespace Lab3
             chartBubble.Series[0].LegendText = "Сравнения";
             chartBubble.Series[1].LegendText = "Обмены";
 
+            chartQuick.Series[0].BorderWidth = 3;
+            chartQuick.Series[0].Color = Color.Red;
+            chartQuick.Series[1].BorderWidth = 3;
+            chartQuick.Series[1].Color = Color.Blue;
+            chartQuick.Series[0].LegendText = "Сравнения";
+            chartQuick.Series[1].LegendText = "Обмены";
         }
 
         //вывод массива в textBox
@@ -52,25 +60,28 @@ namespace Lab3
         {
             buttonStart.Enabled = false;
             dataGridView1.RowHeadersVisible = false;
-            dataGridView1.ColumnCount = 4;
+            dataGridView1.ColumnCount = 5;
             dataGridView1.Columns[0].HeaderText = "Размер";
             dataGridView1.Columns[1].HeaderText = "Выбор";
             dataGridView1.Columns[2].HeaderText = "Вставки";
             dataGridView1.Columns[3].HeaderText = "Пузырек";
+            dataGridView1.Columns[4].HeaderText = "Быстрая";
             dataGridView2.RowHeadersVisible = false;
-            dataGridView2.ColumnCount = 4;
+            dataGridView2.ColumnCount = 5;
             dataGridView2.Columns[0].HeaderText = "Размер";
             dataGridView2.Columns[1].HeaderText = "Выбор";
             dataGridView2.Columns[2].HeaderText = "Вставки";
             dataGridView2.Columns[3].HeaderText = "Пузырек";
-            dataGridView1.ColumnCount = 4;
-            dataGridView2.ColumnCount = 4;
+            dataGridView2.Columns[4].HeaderText = "Быстрая";
+            dataGridView1.ColumnCount = 5;
+            dataGridView2.ColumnCount = 5;
             if (numericUpDownRangeMax.Value < numericUpDownRangeMin.Value)
             { labelLog.Text = "Макс значение не м.б. меньше мин значения!"; return; }
             int count = 0, n, sr = 0, obm = 0;
             ArraySort sortSelect = new ArraySort();
             ArraySort sortInsert = new ArraySort();
             ArraySort sortBubble = new ArraySort();
+            ArraySort quickSort = new ArraySort();
             for (n = Convert.ToInt32(numericUpDownSizeMin.Value); n <=
            Convert.ToInt32(numericUpDownSizeMax.Value); n += Convert.ToInt32(numericUpDownStep.Value))
             {
@@ -118,6 +129,15 @@ namespace Lab3
                 output_dataGridView(count, sr, obm, 3);
                 chartBubble.Series[0].Points.AddXY(n, sr);
                 chartBubble.Series[1].Points.AddXY(n, obm);
+
+                quickSort.a = (int[])base_a.Clone();
+                sr = 0; obm = 0;
+                quickSort.quickSort(quickSort.a, ref sr, ref obm);
+                textBox.Text += "Сортировка быстрая " + Environment.NewLine;
+                outputTextBox(quickSort.a, n);
+                output_dataGridView(count, sr, obm, 4);
+                chartQuick.Series[0].Points.AddXY(n, sr);
+                chartQuick.Series[1].Points.AddXY(n, obm);
                 count++;
 
             }

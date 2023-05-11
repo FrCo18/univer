@@ -69,5 +69,47 @@
                 }
             }
         }
+
+
+        //метод возвращающий индекс опорного элемента
+        public int Partition(int[] array, int minIndex, int maxIndex, ref int sr, ref int obm)
+        {
+            var pivot = minIndex - 1;
+            for (var i = minIndex; i < maxIndex; i++)
+            {
+                sr++;
+                if (array[i] < array[maxIndex])
+                {
+                    pivot++;
+                    swap(ref array[pivot], ref array[i]);
+                    obm++;
+                }
+            }
+
+            pivot++;
+            swap(ref array[pivot], ref array[maxIndex]);
+            return pivot;
+        }
+
+        //быстрая сортировка
+        private int[] quickSort(int[] array, int minIndex, int maxIndex, ref int sr, ref int obm)
+        {
+
+            if (minIndex >= maxIndex)
+            {
+                return array;
+            }
+
+            var pivotIndex = Partition(array, minIndex, maxIndex, ref sr, ref obm);
+            quickSort(array, minIndex, pivotIndex - 1, ref sr, ref obm);
+            quickSort(array, pivotIndex + 1, maxIndex, ref sr, ref obm);
+
+            return array;
+        }
+
+        public int[] quickSort(int[] array, ref int sr, ref int obm)
+        {
+            return quickSort(array, 0, array.Length - 1, ref sr, ref obm);
+        }
     }
 }

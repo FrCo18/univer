@@ -10,3 +10,15 @@ E:\Колледж\Универ\programming\Технологии программ
 E:\Колледж\Универ\programming\Технологии программирования\Лаб3\Lab3\Lab3\obj\Debug\Lab3.csproj.CoreCompileInputs.cache
 E:\Колледж\Универ\programming\Технологии программирования\Лаб3\Lab3\Lab3\obj\Debug\Lab3.exe
 E:\Колледж\Универ\programming\Технологии программирования\Лаб3\Lab3\Lab3\obj\Debug\Lab3.pdb
+F:\Колледж\Универ\programming\Технологии программирования\Лаб3\Lab3\Lab3\bin\Debug\Lab3.exe.config
+F:\Колледж\Универ\programming\Технологии программирования\Лаб3\Lab3\Lab3\bin\Debug\Lab3.exe
+F:\Колледж\Универ\programming\Технологии программирования\Лаб3\Lab3\Lab3\bin\Debug\Lab3.pdb
+F:\Колледж\Универ\programming\Технологии программирования\Лаб3\Lab3\Lab3\obj\Debug\Lab3.csproj.AssemblyReference.cache
+F:\Колледж\Универ\programming\Технологии программирования\Лаб3\Lab3\Lab3\obj\Debug\Lab3.csproj.SuggestedBindingRedirects.cache
+F:\Колледж\Универ\programming\Технологии программирования\Лаб3\Lab3\Lab3\obj\Debug\Lab3.FormMain.resources
+F:\Колледж\Универ\programming\Технологии программирования\Лаб3\Lab3\Lab3\obj\Debug\Lab3.FormNote.resources
+F:\Колледж\Универ\programming\Технологии программирования\Лаб3\Lab3\Lab3\obj\Debug\Lab3.Properties.Resources.resources
+F:\Колледж\Универ\programming\Технологии программирования\Лаб3\Lab3\Lab3\obj\Debug\Lab3.csproj.GenerateResource.cache
+F:\Колледж\Универ\programming\Технологии программирования\Лаб3\Lab3\Lab3\obj\Debug\Lab3.csproj.CoreCompileInputs.cache
+F:\Колледж\Универ\programming\Технологии программирования\Лаб3\Lab3\Lab3\obj\Debug\Lab3.exe
+F:\Колледж\Универ\programming\Технологии программирования\Лаб3\Lab3\Lab3\obj\Debug\Lab3.pdb
