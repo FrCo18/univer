@@ -159,7 +159,8 @@ namespace Lab2
         }
 
         private int endWordIndex = 0;
-        // поиск слов оканчивающихся на глассные с поочерёдным выделением
+
+        // поиск слов начинающиихся на глассные
         private void selectVowelLettersBtn_Click(object sender, EventArgs e)
         {
             richTextBox.ReadOnly = true;
