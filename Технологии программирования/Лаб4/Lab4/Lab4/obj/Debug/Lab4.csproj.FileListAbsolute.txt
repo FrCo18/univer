@@ -10,3 +10,15 @@ E:\Колледж\Универ\programming\Технологии программ
 E:\Колледж\Универ\programming\Технологии программирования\Лаб4\Lab4\Lab4\obj\Debug\Lab4.exe
 E:\Колледж\Универ\programming\Технологии программирования\Лаб4\Lab4\Lab4\obj\Debug\Lab4.pdb
 E:\Колледж\Универ\programming\Технологии программирования\Лаб4\Lab4\Lab4\obj\Debug\Lab4.FormMyTask.resources
+F:\Колледж\Универ\programming\Технологии программирования\Лаб4\Lab4\Lab4\bin\Debug\Lab4.exe.config
+F:\Колледж\Универ\programming\Технологии программирования\Лаб4\Lab4\Lab4\bin\Debug\Lab4.exe
+F:\Колледж\Универ\programming\Технологии программирования\Лаб4\Lab4\Lab4\bin\Debug\Lab4.pdb
+F:\Колледж\Универ\programming\Технологии программирования\Лаб4\Lab4\Lab4\obj\Debug\Lab4.csproj.AssemblyReference.cache
+F:\Колледж\Универ\programming\Технологии программирования\Лаб4\Lab4\Lab4\obj\Debug\Lab4.csproj.SuggestedBindingRedirects.cache
+F:\Колледж\Универ\programming\Технологии программирования\Лаб4\Lab4\Lab4\obj\Debug\Lab4.FormMain.resources
+F:\Колледж\Универ\programming\Технологии программирования\Лаб4\Lab4\Lab4\obj\Debug\Lab4.FormMyTask.resources
+F:\Колледж\Универ\programming\Технологии программирования\Лаб4\Lab4\Lab4\obj\Debug\Lab4.Properties.Resources.resources
+F:\Колледж\Универ\programming\Технологии программирования\Лаб4\Lab4\Lab4\obj\Debug\Lab4.csproj.GenerateResource.cache
+F:\Колледж\Универ\programming\Технологии программирования\Лаб4\Lab4\Lab4\obj\Debug\Lab4.csproj.CoreCompileInputs.cache
+F:\Колледж\Универ\programming\Технологии программирования\Лаб4\Lab4\Lab4\obj\Debug\Lab4.exe
+F:\Колледж\Универ\programming\Технологии программирования\Лаб4\Lab4\Lab4\obj\Debug\Lab4.pdb

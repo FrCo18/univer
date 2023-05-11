@@ -8,10 +8,10 @@ namespace Lab4
 {
     struct Student : ICloneable
     {
-        public DateTime dateOfBithday;
         public string fio;
-        public string address;
-        public string phone;
+        public string group;
+        public double avgMark;
+        public double schoolarship;
 
         public object Clone() => MemberwiseClone();
     }

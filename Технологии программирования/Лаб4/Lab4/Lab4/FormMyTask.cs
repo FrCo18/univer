@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace Lab4
@@ -16,6 +15,8 @@ namespace Lab4
             dataGridView1.ColumnCount = 4;
             dataGridView2.RowHeadersVisible = false;
             dataGridView2.ColumnCount = 4;
+            numericUpDowAvgMark.Controls[0].Visible = false;
+            numericUpDownAvgMarkForFilter.Controls[0].Visible = false;
         }
 
         private List<Student> students = new List<Student>();
@@ -23,37 +24,27 @@ namespace Lab4
         {
             Student student = new Student();
             student.fio = textBoxFio.Text;
-            student.dateOfBithday = dateTimePickerBithday.Value;
-            student.phone = numericUpDownPhone.Value.ToString();
-            student.address = textBoxAddress.Text;
+            student.group = textBoxGroup.Text;
+            student.avgMark = Convert.ToDouble(numericUpDowAvgMark.Value);
+            student.schoolarship = Convert.ToDouble(numericUpDownSchoolarship.Value); ;
             students.Add(student);
-            dataGridView1.Rows.Add(student.fio, student.dateOfBithday.ToString("dd.MM.yyyy"), student.address, student.phone);
+            dataGridView1.Rows.Add(student.fio, student.group, student.avgMark, student.schoolarship);
         }
 
         private void buttonFind_Click(object sender, EventArgs e)
         {
             dataGridView2.Rows.Clear();
-            List<Student> dublicateStudentsByDate = new List<Student>();
-            foreach (Student student in this.students)
+
+            double avgMarkForFilter = Convert.ToDouble(numericUpDownAvgMarkForFilter.Value);
+
+            List<Student> studentsFilter = this.students.FindAll(s => s.avgMark > avgMarkForFilter);
+            foreach (Student student in studentsFilter)
             {
-                dublicateStudentsByDate.Add((Student)student.Clone());
+                dataGridView2.Rows.Add(student.fio, student.group, student.avgMark, student.schoolarship);
             }
 
-            foreach (Student student in this.students)
-            {
-                if (this.students.FindAll(s => s.dateOfBithday == student.dateOfBithday).Count == 1)
-                {
-                    dublicateStudentsByDate.Remove(student);
-                }
-            }
-
-            foreach (Student student in dublicateStudentsByDate)
-            {
-                dataGridView2.Rows.Add(student.fio, student.dateOfBithday.ToString("dd.MM.yyyy"), student.address, student.phone);
-            }
-
-            var direction = ListSortDirection.Ascending;
-            dataGridView2.Sort(dateOfBithColumn2, direction);
+            var direction = ListSortDirection.Descending;
+            dataGridView2.Sort(avgMarkColumn2, direction);
         }
     }
 }

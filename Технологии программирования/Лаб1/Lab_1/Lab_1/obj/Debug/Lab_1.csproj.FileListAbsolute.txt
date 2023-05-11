@@ -20,3 +20,14 @@ E:\Колледж\Универ\programming\Технологии программ
 E:\Колледж\Универ\programming\Технологии программирования\Лаб1\Lab_1\Lab_1\obj\Debug\Lab_1.csproj.CoreCompileInputs.cache
 E:\Колледж\Универ\programming\Технологии программирования\Лаб1\Lab_1\Lab_1\obj\Debug\Lab_1.exe
 E:\Колледж\Универ\programming\Технологии программирования\Лаб1\Lab_1\Lab_1\obj\Debug\Lab_1.pdb
+F:\Колледж\Универ\programming\Технологии программирования\Лаб1\Lab_1\Lab_1\bin\Debug\Lab_1.exe.config
+F:\Колледж\Универ\programming\Технологии программирования\Лаб1\Lab_1\Lab_1\bin\Debug\Lab_1.exe
+F:\Колледж\Универ\programming\Технологии программирования\Лаб1\Lab_1\Lab_1\bin\Debug\Lab_1.pdb
+F:\Колледж\Универ\programming\Технологии программирования\Лаб1\Lab_1\Lab_1\obj\Debug\Lab_1.csproj.AssemblyReference.cache
+F:\Колледж\Универ\programming\Технологии программирования\Лаб1\Lab_1\Lab_1\obj\Debug\Lab_1.csproj.SuggestedBindingRedirects.cache
+F:\Колледж\Универ\programming\Технологии программирования\Лаб1\Lab_1\Lab_1\obj\Debug\Lab_1.Form1.resources
+F:\Колледж\Универ\programming\Технологии программирования\Лаб1\Lab_1\Lab_1\obj\Debug\Lab_1.Properties.Resources.resources
+F:\Колледж\Универ\programming\Технологии программирования\Лаб1\Lab_1\Lab_1\obj\Debug\Lab_1.csproj.GenerateResource.cache
+F:\Колледж\Универ\programming\Технологии программирования\Лаб1\Lab_1\Lab_1\obj\Debug\Lab_1.csproj.CoreCompileInputs.cache
+F:\Колледж\Универ\programming\Технологии программирования\Лаб1\Lab_1\Lab_1\obj\Debug\Lab_1.exe
+F:\Колледж\Универ\programming\Технологии программирования\Лаб1\Lab_1\Lab_1\obj\Debug\Lab_1.pdb

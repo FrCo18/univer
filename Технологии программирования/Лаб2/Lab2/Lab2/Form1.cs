@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.IO;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
@@ -68,11 +69,21 @@ namespace Lab2
 
         private void menuItem1_Click(object sender, EventArgs e)
         {
-            openFileDialog.Filter = "Текстовые файлы (*.rtf; *.txt; *.dat) | *.rtf;*.txt; *.dat";
+            openFileDialog.Filter = "Текстовые файлы (*.rtf;*.txt;*.dat)|*.rtf;*.txt;*.dat";
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 MyFName = openFileDialog.FileName;
-                richTextBox.LoadFile(MyFName);
+
+                if (Path.GetExtension(MyFName) == ".rtf")
+                {
+                    richTextBox.LoadFile(MyFName, RichTextBoxStreamType.RichText);
+                }
+                else
+                {
+                    System.IO.StreamReader sr = new System.IO.StreamReader(openFileDialog.FileName);
+                    richTextBox.Text = sr.ReadToEnd();
+                    sr.Close();
+                }
             }
         }
 
@@ -166,15 +177,15 @@ namespace Lab2
             richTextBox.ReadOnly = true;
             string text = richTextBox.Text;
 
-            string endRegex = @"[a-zа-яё]+";
+            string endRegex = "[a-zа-яё]+";
             string russianLetters = "[аеёиоуыэюя]";
             string englishLetters = "[aeiou]";
             string startRegex = "(^|[^\\w])";
-            string fullRegexString = startRegex + "(" + russianLetters + "|" + englishLetters + ")" + endRegex;
+            string fullRegexString = startRegex + "(?<word>(" + russianLetters + "|" + englishLetters + ")" + endRegex + ")";
             Regex regex = new Regex(fullRegexString, RegexOptions.IgnoreCase);
             MatchCollection allMatches = regex.Matches(text);
 
-            textBoxLog.Text += Environment.NewLine + "Всего слов найдено: " + allMatches.Count + Environment.NewLine + Environment.NewLine;
+            textBoxLog.Text = Environment.NewLine + "Всего слов найдено: " + allMatches.Count;
 
             text = text.Substring(endWordIndex);
             regex = new Regex(fullRegexString, RegexOptions.IgnoreCase);
@@ -182,11 +193,11 @@ namespace Lab2
             Match match = regex.Match(text);
             if (match.Success)
             {
-                int findWordIndex = this.endWordIndex + match.Index;
+                int findWordIndex = this.endWordIndex + match.Groups["word"].Index;
                 richTextBox.SelectionStart = findWordIndex;
-                Regex lastSymbolRegex = new Regex(@"[^\w]$");
                 int wordLength = match.Value.Length;
-                if (lastSymbolRegex.IsMatch(match.Value))
+
+                if (findWordIndex != 0)
                 {
                     wordLength--;
                 }
@@ -195,6 +206,19 @@ namespace Lab2
                 richTextBox.SelectionLength = wordLength;
                 richTextBox.SelectionBackColor = Color.Pink;
             }
+        }
+
+        private void richTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (richTextBox.ReadOnly && e.KeyCode.ToString() == "Space")
+            {
+                selectVowelLettersBtn_Click(sender, e);
+            }
+        }
+
+        private void checkBoxIsReadOnly_CheckedChanged(object sender, EventArgs e)
+        {
+            richTextBox.ReadOnly = checkBoxIsReadOnly.Checked;
         }
 
         private void changeWordsBtn_Click(object sender, EventArgs e)

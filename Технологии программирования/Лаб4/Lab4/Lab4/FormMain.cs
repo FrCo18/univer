@@ -42,19 +42,19 @@ namespace Lab4
 
         }
 
-        Employee[] worker = new Employee[10];
+        Employee[] workers = new Employee[10];
         int count = 0;
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            worker[count].FIO = textBoxFio.Text;
-            worker[count].Post = comboBoxPost.Text;
-            worker[count].Date_of_Birth = dateTimePicker1.Value.ToString("dd.MM.yyyy");
-            worker[count].Degree = comboBoxAcademicDegree.Text;
-            worker[count].Experience = Convert.ToInt32(numericUpDownExperience.Text);
-            dataGridView1.Rows.Add(worker[count].FIO, worker[count].Post,
-            worker[count].Date_of_Birth, worker[count].Degree,
-            worker[count].Experience.ToString());
+            workers[count].FIO = textBoxFio.Text;
+            workers[count].Post = comboBoxPost.Text;
+            workers[count].Date_of_Birth = dateTimePicker1.Value.ToString("dd.MM.yyyy");
+            workers[count].Degree = comboBoxAcademicDegree.Text;
+            workers[count].Experience = Convert.ToInt32(numericUpDownExperience.Text);
+            dataGridView1.Rows.Add(workers[count].FIO, workers[count].Post,
+            workers[count].Date_of_Birth, workers[count].Degree,
+            workers[count].Experience.ToString());
             count++;
         }
 
@@ -64,7 +64,7 @@ namespace Lab4
             {
                 dataGridView2.Rows.Clear();
                 int select1 = Convert.ToInt32(textBox1.Text);
-                foreach (Employee wSel in worker)
+                foreach (Employee wSel in workers)
                 {
                     if (wSel.Experience >= select1)
                     {
@@ -82,9 +82,9 @@ namespace Lab4
             {
                 dataGridView2.Rows.Clear();
                 string select2 = textBox1.Text;
-                foreach (Employee wSel in worker)
+                foreach (Employee wSel in workers)
                 {
-                    if (wSel.Post.ToLower() == select2.ToLower())
+                    if (wSel.Post != null && wSel.Post.ToLower() == select2.ToLower())
                     {
                         dataGridView2.Rows.Add(
                             wSel.FIO,

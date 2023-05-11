@@ -222,7 +222,7 @@ namespace Lab_1
             resultMatrixDataGridView.Rows.Clear();
             resultMatrixDataGridView.ColumnCount = resultCollumnCount + 1;
 
-            matrixLabelInfo.Text = "В матрице удалено: " + (this.n - resultCollumnCount) + "строк";
+            matrixLabelInfo.Text = "В матрице удалено: " + (this.n - resultCollumnCount) + " столбцов";
 
             int[,] sumValuesInLines = new int[this.n, resultCollumnCount + 1];
             for (int i = 0; i <= this.n - 1; i++)
@@ -235,6 +235,7 @@ namespace Lab_1
 
                     if (invalidCollumns.Exists(val => j == val))
                     {
+                        defaultMatrixDataGridView.Rows[i].Cells[j].Style.BackColor = System.Drawing.Color.OrangeRed;
                         continue;
                     }
                     resultMatrixDataGridView.Rows[i].Cells[resultArrayCollumnIndex].Value = ptr[i, j];
@@ -242,8 +243,6 @@ namespace Lab_1
                     sumValuesInLines[i, resultCollumnCount] += ptr[i, j];
                     resultMatrixDataGridView.Rows[i].Cells[resultArrayCollumnIndex].Value = sumValuesInLines[i, resultCollumnCount];
                 }
-
-               
             }
             resultMatrixDataGridView.AutoResizeColumns();
         }

@@ -25,7 +25,7 @@
                     if (a[j] > a[max])
                     {
                         max = j;
-                     }
+                    }
                 }
                 sr++;
                 if (max != i)
@@ -68,6 +68,45 @@
                     }
                 }
             }
+        }
+
+        public void bubbleSortRecursive(int[] a, ref int sr, ref int obm, int aIndex = 0, int bIndex = 0)
+        {
+            if (aIndex < a.Length)
+            {
+                if ((bIndex < a.Length - aIndex - 1))
+                {
+                    sr++;
+                    if (a[bIndex] < a[bIndex + 1])
+                    {
+                        swap(ref a[bIndex], ref a[bIndex + 1]);
+                        obm++;
+                    }
+
+                    bIndex++;
+                }
+
+                aIndex++;
+                bubbleSortRecursive(a, ref sr, ref obm, aIndex, bIndex);
+            }
+
+            return;
+
+
+
+            //for (int i = 0; i < a.Length; i++)
+            //{
+            //    for (int j = 0; j < a.Length - i - 1; j++)
+            //    {
+            //        sr++;
+            //        if (a[j] < a[j + 1])
+            //        {
+
+            //            swap(ref a[j], ref a[j + 1]);
+            //            obm++;
+            //        }
+            //    }
+            //}
         }
 
 

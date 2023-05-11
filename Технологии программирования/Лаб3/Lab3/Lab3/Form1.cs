@@ -11,6 +11,7 @@ namespace Lab3
         public FormMain()
         {
             InitializeComponent();
+            labelLog.Text = "";
             recursionFunctionToolStripMenuItem.Enabled = false;
             chartSelect.Series[0].BorderWidth = 3;
             chartSelect.Series[0].Color = Color.Red;
@@ -39,6 +40,13 @@ namespace Lab3
             chartQuick.Series[1].Color = Color.Blue;
             chartQuick.Series[0].LegendText = "Сравнения";
             chartQuick.Series[1].LegendText = "Обмены";
+
+            chartQuick.Series[2].BorderWidth = 3;
+            chartQuick.Series[2].Color = Color.Green;
+            chartQuick.Series[3].BorderWidth = 3;
+            chartQuick.Series[3].Color = Color.Yellow;
+            chartQuick.Series[2].LegendText = "Сравнения";
+            chartQuick.Series[3].LegendText = "Обмены";
         }
 
         //вывод массива в textBox
@@ -72,9 +80,10 @@ namespace Lab3
             dataGridView2.Columns[1].HeaderText = "Выбор";
             dataGridView2.Columns[2].HeaderText = "Вставки";
             dataGridView2.Columns[3].HeaderText = "Пузырек";
-            dataGridView2.Columns[4].HeaderText = "Быстрая";
+            dataGridView2.Columns[4].HeaderText = "Быстрая + Пузырьком (рекурсив)";
             dataGridView1.ColumnCount = 5;
             dataGridView2.ColumnCount = 5;
+            labelLog.Text = "";
             if (numericUpDownRangeMax.Value < numericUpDownRangeMin.Value)
             { labelLog.Text = "Макс значение не м.б. меньше мин значения!"; return; }
             int count = 0, n, sr = 0, obm = 0;
@@ -82,6 +91,7 @@ namespace Lab3
             ArraySort sortInsert = new ArraySort();
             ArraySort sortBubble = new ArraySort();
             ArraySort quickSort = new ArraySort();
+            ArraySort bubleSortRecursive = new ArraySort();
             for (n = Convert.ToInt32(numericUpDownSizeMin.Value); n <=
            Convert.ToInt32(numericUpDownSizeMax.Value); n += Convert.ToInt32(numericUpDownStep.Value))
             {
@@ -100,8 +110,6 @@ namespace Lab3
                 dataGridView2.Rows.Add();
                 dataGridView2.Rows[count].Cells[0].Value = n;
 
-
-
                 sortSelect.a = (int[])base_a.Clone();
                 sr = 0; obm = 0;
                 sortSelect.selectSort(sortSelect.a, ref sr, ref obm);
@@ -110,7 +118,6 @@ namespace Lab3
                 output_dataGridView(count, sr, obm, 1);
                 chartSelect.Series[0].Points.AddXY(n, sr);
                 chartSelect.Series[1].Points.AddXY(n, obm);
-
 
                 sortInsert.a = (int[])base_a.Clone();
                 sr = 0; obm = 0;
@@ -138,8 +145,16 @@ namespace Lab3
                 output_dataGridView(count, sr, obm, 4);
                 chartQuick.Series[0].Points.AddXY(n, sr);
                 chartQuick.Series[1].Points.AddXY(n, obm);
-                count++;
 
+                bubleSortRecursive.a = (int[])base_a.Clone();
+                sr = 0; obm = 0;
+                bubleSortRecursive.bubbleSortRecursive(bubleSortRecursive.a, ref sr, ref obm);
+                textBox.Text += "Сортировка пузырьком (рекурсив)" + Environment.NewLine;
+                outputTextBox(bubleSortRecursive.a, n);
+                output_dataGridView(count, sr, obm, 4);
+                chartQuick.Series[2].Points.AddXY(n, sr);
+                chartQuick.Series[3].Points.AddXY(n, obm);
+                count++;
             }
 
         }
@@ -155,10 +170,17 @@ namespace Lab3
             loopToolStripMenuItem.Enabled = true;
             chartSelect.Series[0].Points.Clear();
             chartSelect.Series[1].Points.Clear();
+
             chartInsert.Series[0].Points.Clear();
             chartInsert.Series[1].Points.Clear();
+
             chartBubble.Series[0].Points.Clear();
             chartBubble.Series[1].Points.Clear();
+
+            chartQuick.Series[0].Points.Clear();
+            chartQuick.Series[1].Points.Clear();
+            chartQuick.Series[2].Points.Clear();
+            chartQuick.Series[3].Points.Clear();
         }
 
         private void saveAllChartsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -196,7 +218,6 @@ namespace Lab3
                     chartSelect.SaveImage(saveGr.FileName, ChartImageFormat.Png);
                 }
             }
-
         }
 
         private void saveChartBubbleToolStripMenuItem_Click(object sender, EventArgs e)
