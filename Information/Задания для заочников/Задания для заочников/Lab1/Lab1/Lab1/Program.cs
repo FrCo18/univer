@@ -1,6 +1,4 @@
-﻿
-
-class Program
+﻿class Program
 {
     public static void Main(string[] args)
     {
@@ -26,6 +24,7 @@ class Program
         if (!Double.TryParse(Console.ReadLine(), out a))
         {
             Console.WriteLine("Your variable is not double type");
+            Console.WriteLine("Programm ended.");
             Console.ReadLine();
             Environment.Exit(0);
         }
