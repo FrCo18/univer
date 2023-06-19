@@ -5,10 +5,6 @@ class Program
     // 10 вариант
     public static void Main(string[] args)
     {
-        Console.WriteLine("Дано начало последовательности: 4, 14, 44, 134, 404, ...");
-        Console.WriteLine("Какой элемент последовательности вы хотите получить?");
-        Console.WriteLine("Введите номер этого элемента:");
-
         Console.WriteLine("Введите переменную a");
         double a = getDoubleVarFromInput();
 

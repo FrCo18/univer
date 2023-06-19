@@ -22,6 +22,7 @@ namespace Lab_1
         {
             resetBtn.Enabled = true;
             infoLabel.Text = "";
+            resetBtn_Click(sender, e);
 
             int start = Convert.ToInt32(startNumericUpDown.Value);
             int end = Convert.ToInt32(endNumericUpDown.Value);
@@ -132,6 +133,8 @@ namespace Lab_1
             chart2.Series[0].Points.Clear();
             arraysDataGridView.Rows.Clear();
             arraysDataGridView.Columns.Clear();
+            defaultMatrixDataGridView.Rows.Clear();
+            defaultMatrixDataGridView.Columns.Clear();
             this.i = 0;
             resetBtn.Enabled = false;
         }
@@ -148,6 +151,7 @@ namespace Lab_1
 
         private void matrixStartBtn_Click(object sender, EventArgs e)
         {
+            resetBtn_Click(sender, e);
             int i, j;
             resetMatrixBtn.Enabled = true;
             int max = Convert.ToInt32(maxRangeNumericUpDown.Value);
