@@ -199,56 +199,126 @@ namespace Lab_1
         // удаляет в результируещей матрице столбцы у которой под главной диагональю есть нули и в последнем столбце выводит сумму всех значений строки
         private void taskLogic(int[,] ptr)
         {
-            List<int> invalidCollumns = new List<int>();
-            int resultCollumnCount = this.m;
+            // первое число отвечает за строку, второе за произведение
+            int? invalidLine = null;
+            int minValue = int.MaxValue;
+            List<int> invalidLines = new List<int>();
 
-            int line = 1;
-            for (int j = 0; j < this.m; j++)
+
+            for (int currentLine = 0; currentLine < this.n; currentLine++)
             {
-                for (int currentLine = line; currentLine < this.n - 1; currentLine++)
+                // произведение чисел строки
+                int productOfNumbers = 1;
+                for (int column = 0; column < this.m; column++)
                 {
-                    bool toDeleteCollumn = false;
-                    if (currentLine < n && ptr[currentLine, j] == 0 && !invalidCollumns.Exists(val => j == val))
-                    {
-                        invalidCollumns.Add(j);
-                        toDeleteCollumn = true;
-                    }
-
-                    if (toDeleteCollumn)
-                    {
-                        resultCollumnCount--;
-                    }
+                    productOfNumbers *= ptr[currentLine, column];
                 }
 
-                line++;
+                if (minValue > productOfNumbers)
+                {
+                    minValue = productOfNumbers;
+                    invalidLine = currentLine;
+                    invalidLines.Add(currentLine);
+                }
+            }
+
+            // генерация нового массива с удалённой строкой
+            int?[,] resultArray = new int?[this.n, this.m];
+            for (int currentLine = 0; currentLine < this.n; currentLine++)
+            {
+                for (int column = 0; column < this.m; column++)
+                {
+                    if (invalidLines.FindIndex(x => x == currentLine) != -1)
+                    {
+                        resultArray[currentLine, column] = null;
+                    }
+                    else
+                    {
+                        resultArray[currentLine, column] = ptr[currentLine, column];
+                    }
+                }
+            }
+
+            int countDeleted = invalidLines.ToArray().Length;
+            moveNullLineToSecondLine(ref resultArray, countDeleted);
+
+            fillResultTaskMatrix(invalidLines, resultArray);
+        }
+
+        private void fillResultTaskMatrix(List<int> invalidLines, int?[,] resultArray)
+        {
+            // Разность среди строки первой и последней
+            List<int> difference = new List<int>();
+
+            for (int column = 0; column < this.m; column++)
+            {
+                difference.Add(ptr[0, column] - ptr[this.n - 1, column]);
             }
 
             resultMatrixDataGridView.Rows.Clear();
-            resultMatrixDataGridView.ColumnCount = resultCollumnCount + 1;
+            resultMatrixDataGridView.ColumnCount = this.m;
 
-            matrixLabelInfo.Text = "В матрице удалено: " + (this.n - resultCollumnCount) + " столбцов";
-
-            int[,] sumValuesInLines = new int[this.n, resultCollumnCount + 1];
-            for (int i = 0; i <= this.n - 1; i++)
+            for (int currentLine = 0; currentLine <= this.n - 1; currentLine++)
             {
-                int resultArrayCollumnIndex = 0;
+                int newCurrentLine = currentLine;
 
                 resultMatrixDataGridView.Rows.Add();
-                for (int j = 0; j < m; j++)
-                {
 
-                    if (invalidCollumns.Exists(val => j == val))
+                if (currentLine == 1)
+                {
+                    for (int column = 0; column < this.m; column++)
                     {
-                        defaultMatrixDataGridView.Rows[i].Cells[j].Style.BackColor = System.Drawing.Color.OrangeRed;
-                        continue;
+                        if (invalidLines.FindIndex(x => x == currentLine) != -1)
+                        {
+                            defaultMatrixDataGridView.Rows[currentLine].Cells[column].Style.BackColor = System.Drawing.Color.OrangeRed;
+                        }
+                        resultMatrixDataGridView.Rows[currentLine].Cells[column].Value = difference.ToArray()[column];
                     }
-                    resultMatrixDataGridView.Rows[i].Cells[resultArrayCollumnIndex].Value = ptr[i, j];
-                    resultArrayCollumnIndex++;
-                    sumValuesInLines[i, resultCollumnCount] += ptr[i, j];
-                    resultMatrixDataGridView.Rows[i].Cells[resultArrayCollumnIndex].Value = sumValuesInLines[i, resultCollumnCount];
+                    continue;
+                }
+
+                for (int column = 0; column < this.m; column++)
+                {
+                    if (invalidLines.FindIndex(x => x == currentLine) != -1)
+                    {
+                        defaultMatrixDataGridView.Rows[currentLine].Cells[column].Style.BackColor = System.Drawing.Color.OrangeRed;
+                    }
+
+                    resultMatrixDataGridView.Rows[newCurrentLine].Cells[column].Value = resultArray[currentLine, column];
                 }
             }
             resultMatrixDataGridView.AutoResizeColumns();
+        }
+
+        // перемещает null-овую строчку на вторую строчку
+        private void moveNullLineToSecondLine(ref int?[,] arr, int countDeleted)
+        {
+            for (int currentLine = 0; currentLine < this.n; currentLine++)
+            {
+                for (int column = 0; column < this.m; column++)
+                {
+                    if (arr[currentLine, column] == null && currentLine == 0)
+                    {
+                        arr[currentLine, column] = arr[currentLine + 1, column];
+                        arr[currentLine + 1, column] = null;
+                    }
+                    else if (arr[currentLine, column] == null && currentLine > 1)
+                    {
+                        int? tmp = arr[currentLine - 1, column];
+                        arr[currentLine, column] = tmp;
+                        arr[currentLine - 1, column] = null;
+                    }
+                }
+            }
+
+            for (int column = 0; column < this.m; column++)
+            {
+                if (arr[1, column] != null)
+                {
+                    moveNullLineToSecondLine(ref arr, countDeleted);
+                    return;
+                }
+            }
         }
 
         private void defaultLogic(int[,] ptr)

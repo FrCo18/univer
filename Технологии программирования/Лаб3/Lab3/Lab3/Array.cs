@@ -70,43 +70,37 @@
             }
         }
 
-        public void bubbleSortRecursive(int[] a, ref int sr, ref int obm, int aIndex = 0, int bIndex = 0)
+        public void bubbleSortRecursive(int[] a, int n, ref int sr, ref int obm)
         {
-            if (aIndex < a.Length)
+            // Base case
+            if (n == 1)
             {
-                if ((bIndex < a.Length - aIndex - 1))
-                {
-                    sr++;
-                    if (a[bIndex] < a[bIndex + 1])
-                    {
-                        swap(ref a[bIndex], ref a[bIndex + 1]);
-                        obm++;
-                    }
-
-                    bIndex++;
-                }
-
-                aIndex++;
-                bubbleSortRecursive(a, ref sr, ref obm, aIndex, bIndex);
+                return;
             }
 
-            return;
+            int count = 0;
+            // One pass of bubble sort. After
+            // this pass, the largest element
+            // is moved (or bubbled) to end.
+            for (int i = 0; i < n - 1; i++)
+            {
+                sr++;
+                if (a[i] < a[i + 1])
+                {
+                    swap(ref a[i], ref a[i + 1]);
+                    count++;
+                    obm++;
+                }
+            }
 
+            // Check if any recursion happens or not
+            // If any recursion is not happen then return
+            if (count == 0)
+            {
+                return;
+            }
 
-
-            //for (int i = 0; i < a.Length; i++)
-            //{
-            //    for (int j = 0; j < a.Length - i - 1; j++)
-            //    {
-            //        sr++;
-            //        if (a[j] < a[j + 1])
-            //        {
-
-            //            swap(ref a[j], ref a[j + 1]);
-            //            obm++;
-            //        }
-            //    }
-            //}
+            bubbleSortRecursive(a, a.Length, ref sr, ref obm);
         }
 
 
@@ -117,7 +111,7 @@
             for (var i = minIndex; i < maxIndex; i++)
             {
                 sr++;
-                if (array[i] < array[maxIndex])
+                if (array[i] > array[maxIndex])
                 {
                     pivot++;
                     swap(ref array[pivot], ref array[i]);

@@ -26,18 +26,8 @@ namespace Lab4
 
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.ColumnCount = 5;
-            //dataGridView1.Columns[0].HeaderText = "ФИО";
-            //dataGridView1.Columns[1].HeaderText = "Должность";
-            //dataGridView1.Columns[2].HeaderText = "Дата рождения";
-            //dataGridView1.Columns[3].HeaderText = "Ученая степень";
-            //dataGridView1.Columns[4].HeaderText = "Стаж";
             dataGridView2.RowHeadersVisible = false;
             dataGridView2.ColumnCount = 5;
-            //dataGridView2.Columns[0].HeaderText = "ФИО";
-            //dataGridView2.Columns[1].HeaderText = "Должность";
-            //dataGridView2.Columns[2].HeaderText = "Дата рождения";
-            //dataGridView2.Columns[3].HeaderText = "Ученая степень";
-            //dataGridView2.Columns[4].HeaderText = "Стаж";
             dataGridView2.RowHeadersVisible = false;
 
         }

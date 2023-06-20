@@ -38,7 +38,6 @@
             this.findFirstBtn = new System.Windows.Forms.Button();
             this.changeWordsBtn = new System.Windows.Forms.Button();
             this.findSecondBtn = new System.Windows.Forms.Button();
-            this.selectVowelLettersBtn = new System.Windows.Forms.Button();
             this.checkBoxIsReadOnly = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
@@ -118,16 +117,6 @@
             this.findSecondBtn.UseVisualStyleBackColor = true;
             this.findSecondBtn.Click += new System.EventHandler(this.findSecondBtn_Click);
             // 
-            // selectVowelLettersBtn
-            // 
-            this.selectVowelLettersBtn.Location = new System.Drawing.Point(273, 366);
-            this.selectVowelLettersBtn.Name = "selectVowelLettersBtn";
-            this.selectVowelLettersBtn.Size = new System.Drawing.Size(272, 57);
-            this.selectVowelLettersBtn.TabIndex = 8;
-            this.selectVowelLettersBtn.Text = "Выделить слово начинающее на глассную";
-            this.selectVowelLettersBtn.UseVisualStyleBackColor = true;
-            this.selectVowelLettersBtn.Click += new System.EventHandler(this.selectVowelLettersBtn_Click);
-            // 
             // checkBoxIsReadOnly
             // 
             this.checkBoxIsReadOnly.AutoSize = true;
@@ -145,7 +134,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.checkBoxIsReadOnly);
-            this.Controls.Add(this.selectVowelLettersBtn);
             this.Controls.Add(this.findSecondBtn);
             this.Controls.Add(this.changeWordsBtn);
             this.Controls.Add(this.findFirstBtn);
@@ -174,7 +162,6 @@
         private System.Windows.Forms.Button findFirstBtn;
         private System.Windows.Forms.Button changeWordsBtn;
         private System.Windows.Forms.Button findSecondBtn;
-        private System.Windows.Forms.Button selectVowelLettersBtn;
         private System.Windows.Forms.CheckBox checkBoxIsReadOnly;
     }
 }

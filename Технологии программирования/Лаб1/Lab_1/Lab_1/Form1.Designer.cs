@@ -464,7 +464,7 @@
             this.useTaskLogicCheckBox.Name = "useTaskLogicCheckBox";
             this.useTaskLogicCheckBox.Size = new System.Drawing.Size(328, 17);
             this.useTaskLogicCheckBox.TabIndex = 15;
-            this.useTaskLogicCheckBox.Text = "Использовать логику задания по вариантам (2-ой вариант)";
+            this.useTaskLogicCheckBox.Text = "Использовать логику задания по вариантам (6-ой вариант)";
             this.useTaskLogicCheckBox.UseVisualStyleBackColor = true;
             // 
             // matrixLabelInfo
