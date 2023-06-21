@@ -1,4 +1,6 @@
-﻿namespace Sorting
+﻿using System.Reflection;
+
+namespace Sorting
 {
     class ArraySort
     {
@@ -77,24 +79,11 @@
             {
                 return;
             }
-
             int count = 0;
-            // One pass of bubble sort. After
-            // this pass, the largest element
-            // is moved (or bubbled) to end.
-            for (int i = 0; i < n - 1; i++)
-            {
-                sr++;
-                if (a[i] < a[i + 1])
-                {
-                    swap(ref a[i], ref a[i + 1]);
-                    count++;
-                    obm++;
-                }
-            }
 
-            // Check if any recursion happens or not
-            // If any recursion is not happen then return
+            int index = 0;
+            bubble2(a, n, ref index, ref count, ref sr, ref obm);
+   
             if (count == 0)
             {
                 return;
@@ -103,6 +92,23 @@
             bubbleSortRecursive(a, a.Length, ref sr, ref obm);
         }
 
+        private void bubble2(int[] a, int n, ref int index, ref int count, ref int sr, ref int obm)
+        {
+            if (!(index < n - 1))
+            {
+                return;
+            }
+            sr++;
+            if (a[index] < a[index + 1])
+            {
+                swap(ref a[index], ref a[index + 1]);
+                count++;
+                obm++;
+            }
+
+            index++;
+            bubble2(a, n, ref index, ref count, ref sr, ref obm);
+        }
 
         //метод возвращающий индекс опорного элемента
         public int Partition(int[] array, int minIndex, int maxIndex, ref int sr, ref int obm)
