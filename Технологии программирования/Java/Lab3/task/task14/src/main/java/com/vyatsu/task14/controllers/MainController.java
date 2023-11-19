@@ -5,18 +5,18 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-//@RequestMapping("/main")
+@RequestMapping("/main")
 public class MainController {
-//    @GetMapping
-//    public String index() {
-//        return "index";
-//    }
-//
-//    @GetMapping("/secured")
-//    public String secured() {
-//        return "index";
-//    }
-//
+    @GetMapping
+    public String index() {
+        return "index";
+    }
+
+    @GetMapping("/secured")
+    public String secured() {
+        return "index";
+    }
+
     @GetMapping("/form")
     public String showForm() {
         return "simple-form";
