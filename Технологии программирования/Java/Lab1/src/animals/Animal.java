@@ -1,6 +1,6 @@
 package animals;
 
-public class Animal {
+public abstract class Animal {
     double maxRunM;
     double maxSwimM;
 
@@ -64,4 +64,6 @@ public class Animal {
 
         return String.format("Животное %s, по имени %s, проплыло %f метров.", getName(), getNickName(), swimM);
     }
+
+    public abstract int getCount();
 }

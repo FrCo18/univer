@@ -1,8 +1,10 @@
 package models.partipants;
 
 import interfaces.DoInterface;
+import models.obstacle.Obstacle;
+import models.obstacle.ObstacleType;
 
-public class Cat implements DoInterface {
+public class Cat extends Participant {
     private double maxRunM;
     private double maxJumpM;
 

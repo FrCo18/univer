@@ -2,7 +2,7 @@ package models.partipants;
 
 import interfaces.DoInterface;
 
-public class Robot implements DoInterface {
+public class Robot extends Participant {
     private double maxRunM;
     private double maxJumpM;
 

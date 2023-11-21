@@ -1,8 +1,9 @@
 package models.partipants;
 
 import interfaces.DoInterface;
+import models.obstacle.Obstacle;
 
-public class Human implements DoInterface {
+public class Human extends Participant {
     private double maxRunM;
     private double maxJumpM;
 

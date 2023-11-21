@@ -30,8 +30,12 @@
         </tr>
         </tbody>
     </table>
-    <span th:text="${'Всего товаров ' + products.size()}"/>
-    <br>
+    <span th:text="${'Всего товаров ' + countProducts}"/>
+    <div th:if="${countPages != 0}">
+        <a class="btn btn-primary" th:each="num : ${#numbers.sequence(0, countPages)}" th:href="@{'/products/' + ${num}}"
+           th:text="${num}"/>
+        <br>
+    </div>
     <form th:action="@{/products/add}"
           th:object="${product}" method="post" class="form-horizontal">
 
@@ -49,7 +53,7 @@
             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
             <input th:field="*{price}" placeholder="price (*)" class="form-control"/>
         </div>
-
+        <input type="hidden" name="page" th:value="${page}">
         <div style="margin-top: 10px" class="form-group">
             <div class="col-sm-6 controls">
                 <button type="submit" class="btn btn-primary">Add</button>

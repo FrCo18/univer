@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  some-postgres:
+    image: postgres:16.1
+    environment:
+      - POSTGRES_PASSWORD=ashatan
+    ports:
+      - 5432:5432

@@ -1,4 +1,7 @@
 import animals.Animal;
+import animals.Cat;
+import animals.Dog;
+import animals.Tiger;
 
 import java.util.Random;
 
@@ -7,9 +10,13 @@ import java.util.Random;
 public class Main {
     public static void main(String[] args) {
         Animal[] animals = new Animal[]{
-                (new Animal(200, 0, "Домашний Кот", "Мурзик")),
-                (new Animal(500, 10, "Собака", "Бобик")),
-                (new Animal(1000, 10, "Тигр", "Мурзик"))
+                (new Cat(200, 0, "Домашний Кот", "Мурзик")),
+                (new Cat(200, 0, "Домашний Кот", "Мурзик")),
+                (new Cat(200, 0, "Домашний Кот", "Мурзик")),
+                (new Dog(500, 10, "Собака", "Бобик")),
+                (new Tiger(1000, 10, "Тигр", "Мурзик")),
+                (new Tiger(1000, 10, "Тигр", "Мурзик")),
+                (new Tiger(1000, 10, "Тигр", "Мурзик")),
         };
 
         Random rnd = new Random();
@@ -22,6 +29,8 @@ public class Main {
                 } else {
                     System.out.printf(animal.swim(rnd.nextDouble(0, animal.getMaxSwimM())) + "\n");
                 }
+
+                System.out.printf("Count %s: %d\n", animal.getName(), animal.getCount());
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
