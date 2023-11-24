@@ -1,9 +1,22 @@
 package com.vyatsu.task14.entities;
 
+import lombok.Data;
+import org.springframework.stereotype.Component;
+
+import javax.persistence.*;
+
+@Data
+@Component
+@Entity
+@Table(name = "products")
 public class Product {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String title;
-    private int price;
+    @Column
+    private String title = "";
+    @Column
+    private int price = 0;
 
     public Long getId() {
         return id;
