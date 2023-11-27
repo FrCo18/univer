@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Tracker</title>
+    <style>
+        .block {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            display: inline-block;
+            cursor: pointer;
+            position: relative;
+            background-color: blue;
+            transition: .5s;
+            border-radius: 10px;
+        }
+
+        #main-div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        .block:hover {
+            width: 150px;
+            height: 150px;
+        }
+
+        .time {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="main-div">
+        <div>
+            <div id="block1" class="block" onmouseenter="highlightBlock('block1')" onmouseleave="resetBlock('block1')">
+                <div class="time"></div>
+            </div>
+            <div id="block2" class="block" onmouseenter="highlightBlock('block2')" onmouseleave="resetBlock('block2')">
+                <div class="time"></div>
+            </div>
+            <div id="block3" class="block" onmouseenter="highlightBlock('block3')" onmouseleave="resetBlock('block3')">
+                <div class="time"></div>
+            </div>
+        </div>
+
+        <div id="block-elapsed" class="block-elapsed"></div>
+    </div>
+
+    <script src="index,js"></script>
+
+</body>
+
+</html>

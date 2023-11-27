@@ -1,0 +1,42 @@
+let hoveredBlock = null;
+        let startTime;
+
+        function highlightBlock(blockId) {
+            if (hoveredBlock !== null) {
+                resetBlock(hoveredBlock);
+            }
+
+            hoveredBlock = blockId;
+            startTime = new Date();
+
+            const block = document.getElementById(blockId);
+            const timeDiv = block.querySelector('.time');
+            timeDiv.innerHTML = '0 ms';
+            block.style.backgroundColor = 'yellow';
+
+            const intervalId = setInterval(() => {
+                const currentTime = new Date();
+                const elapsedTime = currentTime - startTime;
+                timeDiv.innerHTML = `${elapsedTime} ms`;
+            }, 100);
+
+            block.setAttribute('data-interval-id', intervalId);
+        }
+
+        function resetBlock(blockId) {
+            if (hoveredBlock === blockId) {
+                const block = document.getElementById(blockId);
+                const timeDiv = block.querySelector('.time');
+                const endTime = new Date();
+                const elapsedTime = endTime - startTime;
+
+                clearInterval(parseInt(block.getAttribute('data-interval-id')));
+                timeDiv.innerHTML = '';
+                block.style.backgroundColor = '';
+
+                hoveredBlock = null;
+
+                const blockElapsed = document.getElementById("block-elapsed");
+                blockElapsed.innerHTML = `Прошло времени для блока ${blockId}: ${elapsedTime}ms.`;
+            }
+        }
